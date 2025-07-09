@@ -1,18 +1,15 @@
-# Welcome to your Lovable project
+# Welcome to your MindMint
 
 ## Project info
+MindMint offers non-digital, sensory wellness personalized products and kits — crafted to help people take mindful and screen-free mental breaks.
+Each kit is designed for a specific emotion — anxiety, sadness, burnout, panic, or simply “I don’t know what I’m feeling.”
 
-**URL**: https://lovable.dev/projects/d1ee11c2-fa1c-4709-9d61-f01358672a7e
+Apart from the individual products, we are offering starter kits and advanced kits. The starter ones help you connect to your body, while the advanced ones are more integrated and come with sensory technology that helps you track your progress regularly.
+
+Our USP: MindMint is the first of its kind to blend ancient grounding techniques with modern sensory tech — delivering holistic, screen-free emotional support that grows with your journey. Whether you’re overwhelmed, numb, or unsure, MindMint meets you where you are — no diagnosis, no judgment, just relief.
 
 ## How can I edit this code?
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/d1ee11c2-fa1c-4709-9d61-f01358672a7e) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
 
 **Use your preferred IDE**
 
@@ -60,14 +57,4 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/d1ee11c2-fa1c-4709-9d61-f01358672a7e) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
