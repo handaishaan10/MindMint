@@ -3,6 +3,22 @@ import React from 'react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 export const Hero = () => {
+  const handleShopKits = () => {
+    // Scroll to the KitShowcase section
+    const kitSection = document.querySelector('#wellness-kits');
+    if (kitSection) {
+      kitSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleLearnMore = () => {
+    // Scroll to the AboutSection
+    const aboutSection = document.querySelector('#about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative py-12 sm:py-16 lg:py-20 px-4 overflow-hidden">
       <div className="container mx-auto max-w-6xl">
@@ -25,11 +41,17 @@ export const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
-            <button className="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium flex items-center justify-center space-x-2 hover:from-green-600 hover:to-green-700 transition-all duration-200 shadow-lg hover:shadow-xl">
+            <button 
+              onClick={handleShopKits}
+              className="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium flex items-center justify-center space-x-2 hover:from-green-600 hover:to-green-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+            >
               <span className="text-sm sm:text-base">Shop Wellness Kits</span>
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
-            <button className="border-2 border-green-500 text-green-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium hover:bg-green-50 transition-all duration-200 text-sm sm:text-base">
+            <button 
+              onClick={handleLearnMore}
+              className="border-2 border-green-500 text-green-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium hover:bg-green-50 transition-all duration-200 text-sm sm:text-base"
+            >
               Learn More
             </button>
           </div>

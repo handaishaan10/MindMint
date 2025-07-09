@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { ShoppingCart, Heart } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 export const ProductGrid = () => {
+  const { toast } = useToast();
+
   const products = [
     {
       id: 1,
@@ -67,6 +70,24 @@ export const ProductGrid = () => {
     ? products 
     : products.filter(product => product.category === selectedCategory);
 
+  const handleAddToCart = (product: typeof products[0]) => {
+    if (!product.inStock) return;
+    
+    toast({
+      title: "Added to Cart!",
+      description: `${product.name} has been added to your cart.`,
+    });
+    console.log(`Added ${product.name} to cart`);
+  };
+
+  const handleWishlist = (product: typeof products[0]) => {
+    toast({
+      title: "Added to Wishlist!",
+      description: `${product.name} has been added to your wishlist.`,
+    });
+    console.log(`Added ${product.name} to wishlist`);
+  };
+
   return (
     <section className="py-12 sm:py-16 lg:py-20 px-4 bg-white">
       <div className="container mx-auto max-w-6xl">
@@ -110,7 +131,10 @@ export const ProductGrid = () => {
               <div className="p-4 sm:p-6">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs sm:text-sm text-green-600 font-medium">{product.category}</span>
-                  <button className="text-gray-400 hover:text-red-500 transition-colors">
+                  <button 
+                    onClick={() => handleWishlist(product)}
+                    className="text-gray-400 hover:text-red-500 transition-colors"
+                  >
                     <Heart className="w-4 h-4 sm:w-5 sm:h-5" />
                   </button>
                 </div>
@@ -121,6 +145,7 @@ export const ProductGrid = () => {
                 <div className="flex items-center justify-between">
                   <span className="text-xl sm:text-2xl font-bold text-gray-900">${product.price}</span>
                   <button 
+                    onClick={() => handleAddToCart(product)}
                     disabled={!product.inStock}
                     className={`flex items-center space-x-1 sm:space-x-2 px-3 sm:px-4 py-2 rounded-lg font-medium transition-all duration-200 text-sm sm:text-base ${
                       product.inStock 

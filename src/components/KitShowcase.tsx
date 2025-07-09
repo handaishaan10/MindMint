@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { Check, Star, ShoppingCart } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 export const KitShowcase = () => {
+  const { toast } = useToast();
+
   const kits = [
     {
       id: 1,
@@ -39,8 +42,16 @@ export const KitShowcase = () => {
     },
   ];
 
+  const handleAddToCart = (kit: typeof kits[0]) => {
+    toast({
+      title: "Added to Cart!",
+      description: `${kit.name} has been added to your cart.`,
+    });
+    console.log(`Added ${kit.name} to cart`);
+  };
+
   return (
-    <section className="py-12 sm:py-16 lg:py-20 px-4">
+    <section id="wellness-kits" className="py-12 sm:py-16 lg:py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
@@ -99,7 +110,10 @@ export const KitShowcase = () => {
                   </span>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-2.5 sm:py-3 rounded-lg sm:rounded-xl font-medium flex items-center justify-center space-x-2 hover:from-green-600 hover:to-green-700 transition-all duration-200">
+                <button 
+                  onClick={() => handleAddToCart(kit)}
+                  className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-2.5 sm:py-3 rounded-lg sm:rounded-xl font-medium flex items-center justify-center space-x-2 hover:from-green-600 hover:to-green-700 transition-all duration-200"
+                >
                   <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5" />
                   <span className="text-sm sm:text-base">Add to Cart</span>
                 </button>
