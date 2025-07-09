@@ -68,24 +68,24 @@ export const ProductGrid = () => {
     : products.filter(product => product.category === selectedCategory);
 
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="py-12 sm:py-16 lg:py-20 px-4 bg-white">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Individual Products
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
             Build your own wellness collection with our carefully selected sensory tools
           </p>
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-4">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
+              className={`px-3 sm:px-6 py-2 rounded-full font-medium transition-all duration-200 text-sm sm:text-base ${
                 selectedCategory === category
                   ? 'bg-green-500 text-white'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -97,39 +97,40 @@ export const ProductGrid = () => {
         </div>
 
         {/* Products Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredProducts.map((product) => (
             <div 
               key={product.id} 
-              className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group"
+              className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group"
             >
-              <div className="aspect-square bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center text-6xl">
+              <div className="aspect-square bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center text-4xl sm:text-5xl lg:text-6xl">
                 {product.image}
               </div>
               
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-green-600 font-medium">{product.category}</span>
+                  <span className="text-xs sm:text-sm text-green-600 font-medium">{product.category}</span>
                   <button className="text-gray-400 hover:text-red-500 transition-colors">
-                    <Heart className="w-5 h-5" />
+                    <Heart className="w-4 h-4 sm:w-5 sm:h-5" />
                   </button>
                 </div>
                 
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{product.name}</h3>
-                <p className="text-gray-600 mb-4">{product.description}</p>
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{product.name}</h3>
+                <p className="text-sm sm:text-base text-gray-600 mb-4">{product.description}</p>
                 
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-gray-900">${product.price}</span>
+                  <span className="text-xl sm:text-2xl font-bold text-gray-900">${product.price}</span>
                   <button 
                     disabled={!product.inStock}
-                    className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
+                    className={`flex items-center space-x-1 sm:space-x-2 px-3 sm:px-4 py-2 rounded-lg font-medium transition-all duration-200 text-sm sm:text-base ${
                       product.inStock 
                         ? 'bg-green-500 text-white hover:bg-green-600' 
                         : 'bg-gray-200 text-gray-500 cursor-not-allowed'
                     }`}
                   >
-                    <ShoppingCart className="w-4 h-4" />
-                    <span>{product.inStock ? 'Add to Cart' : 'Out of Stock'}</span>
+                    <ShoppingCart className="w-3 h-3 sm:w-4 sm:h-4" />
+                    <span className="hidden sm:inline">{product.inStock ? 'Add to Cart' : 'Out of Stock'}</span>
+                    <span className="sm:hidden">{product.inStock ? 'Add' : 'Out'}</span>
                   </button>
                 </div>
               </div>

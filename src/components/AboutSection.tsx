@@ -11,13 +11,13 @@ export const AboutSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-r from-green-50 to-blue-50">
+    <section className="py-12 sm:py-16 lg:py-20 px-4 bg-gradient-to-r from-green-50 to-blue-50">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
             About MindMint
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
             Mental health shouldn't be a luxury. We believe every teenager deserves access to 
             effective, affordable tools for managing stress and anxiety. That's why we created 
             MindMint - to make wellness accessible, simple, and engaging.
@@ -25,24 +25,24 @@ export const AboutSection = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <stat.icon className="w-8 h-8 text-green-500" />
+              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
+                <stat.icon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-green-500" />
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-              <div className="text-gray-600">{stat.label}</div>
+              <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">{stat.value}</div>
+              <div className="text-sm sm:text-base text-gray-600">{stat.label}</div>
             </div>
           ))}
         </div>
 
         {/* Mission */}
-        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-lg">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Our Mission</h3>
+              <p className="text-gray-600 leading-relaxed mb-4 sm:mb-6">
                 We recognized that 1 out of every 3 teenagers is battling anxiety or stress, 
                 yet mental health resources remain inaccessible to many. Through our personalized 
                 sensory-based wellness kits, we're making mental wellness fun, affordable, and effective.
@@ -52,10 +52,10 @@ export const AboutSection = () => {
                 designed to provide immediate relief and long-term coping strategies for stress management.
               </p>
             </div>
-            <div className="bg-gradient-to-br from-green-100 to-blue-100 rounded-2xl p-8 text-center">
-              <div className="text-4xl mb-4">🧠💚</div>
-              <h4 className="text-xl font-semibold text-gray-900 mb-2">Evidence-Based Approach</h4>
-              <p className="text-gray-600">
+            <div className="bg-gradient-to-br from-green-100 to-blue-100 rounded-xl sm:rounded-2xl p-6 sm:p-8 text-center">
+              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">🧠💚</div>
+              <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">Evidence-Based Approach</h4>
+              <p className="text-sm sm:text-base text-gray-600">
                 Our products are based on sensory integration therapy and mindfulness practices 
                 proven to reduce anxiety and stress in teenagers.
               </p>
